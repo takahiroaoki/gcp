@@ -1,0 +1,13 @@
+{
+    "name": "gcp-playground",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "gcp-playground",
+    "workspaceFolder": "/workspaces/gcp-playground",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}
