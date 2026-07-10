@@ -1,8 +1,8 @@
 {
-    "name": "gcp",
+    "name": "gcp-playground",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "gcp",
-    "workspaceFolder": "/workspaces/gcp",
+    "service": "gcp-playground",
+    "workspaceFolder": "/workspaces/gcp-playground",
     "customizations": {
         "vscode": {
             "extensions": [

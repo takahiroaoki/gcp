@@ -1,9 +1,9 @@
 services:
-  gcp:
+  gcp-playground:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ..:/workspaces/gcp
-    working_dir: /workspaces/gcp
+      - ..:/workspaces/gcp-playground
+    working_dir: /workspaces/gcp-playground
     tty: true
