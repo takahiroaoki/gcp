@@ -1,0 +1,13 @@
+{
+    "name": "gcp",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "gcp",
+    "workspaceFolder": "/workspaces/gcp",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}

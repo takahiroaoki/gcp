@@ -1,0 +1,9 @@
+services:
+  gcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/gcp
+    working_dir: /workspaces/gcp
+    tty: true
