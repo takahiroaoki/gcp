@@ -1,7 +1,5 @@
 [tasks.enable]
-run = '''
-gcloud services enable container.googleapis.com run.googleapis.com
-'''
+run = "gcloud services enable container.googleapis.com run.googleapis.com"
 
 #################
 ### terraform ###

@@ -1,6 +1,6 @@
 {
     "name": "gcp-playground",
-    "dockerComposeFile": "docker-compose.yml",
+    "dockerComposeFile": "docker-compose.yaml",
     "service": "gcp-playground",
     "workspaceFolder": "/workspaces/gcp-playground",
     "customizations": {
