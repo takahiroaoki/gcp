@@ -2,7 +2,7 @@
 
 GCP playground for myself.
 
-This repository mainly store code or scripts for terraform, GKE, etc.
+This repository mainly store code or scripts for terraform, k8s, etc.
 
 ## setup
 
