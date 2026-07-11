@@ -1,5 +1,9 @@
 # gcp-playground
 
+GCP playground for myself.
+
+This repository mainly store code or scripts for terraform, GKE, etc.
+
 ## setup
 
 1. Install tools.
