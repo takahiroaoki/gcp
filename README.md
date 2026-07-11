@@ -8,6 +8,9 @@ This repository mainly store code or scripts for terraform, k8s, etc.
 
 - Docker Desktop
 - VSCode & Dev Container Extension
+- A GCP project (which enables the followings)
+    - GKE
+    - Cloud Run
 
 ※Or, codespaces.
 

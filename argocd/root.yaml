@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/takahiroaoki/gcp-playground.git
+    path: argocd/app/
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/takahiroaoki/gcp-playground.git
+    path: argocd/infra/
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: false

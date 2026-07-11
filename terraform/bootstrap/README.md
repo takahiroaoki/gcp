@@ -20,7 +20,7 @@ This tf generate a cluster for argocd.
 	
 	Get initial password for `admin` user. Then get access to the host of `argocd-server`.
 	```
-	$ mise run argocdpwd
+	$ mise run argocdready
 	```
 
 ## clean up
