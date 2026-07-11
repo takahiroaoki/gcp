@@ -16,3 +16,11 @@
     ```
 
 1. Prepare a GCS bucket for tfstate files. See [backend](./backend/).
+
+1. Prepare a GKE for argocd and applications. See [bootstraps](./bootstraps/).
+
+## clean up
+
+1. Destroy clusters for argocd and applications. See [bootstraps](./bootstraps/).
+
+1. Finally, destroy the backend bucket. See [backend](./backend/).
