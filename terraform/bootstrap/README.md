@@ -1,6 +1,6 @@
 # bootstrap
 
-This tf generate a cluster for argocd and applications.
+This tf generate a cluster for argocd.
 
 ## setup
 
@@ -11,7 +11,7 @@ This tf generate a cluster for argocd and applications.
 	$ mise run tfapply
 	```
 
-1. Setup argocd.
+1. Setup argocd and wait until the workloads become ready.
 	```
 	$ mise run argocd
 	```
