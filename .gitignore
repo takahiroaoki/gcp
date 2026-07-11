@@ -1,0 +1,17 @@
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+**/*.tfstate
+**/*.tfstate.*
+
+# key files
+**/*.pem
+**/*.pub
+
+# dot files
+**/*.dot
+
+# others
+**/*.tar.gz

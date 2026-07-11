@@ -1,2 +1,31 @@
 [tools]
+argocd = "3.4.5"
 gcloud = "575.0.1"
+helm = "4.2.3"
+kubectl = "1.36.2"
+kubectx = "0.11.0"
+terraform = "1.15.8"
+
+##############
+### gcloud ###
+##############
+
+[tasks.init]
+run = "gcloud init"
+
+[tasks.auth]
+run = "gcloud auth login"
+
+[tasks.appauth]
+run = "gcloud auth application-default login"
+
+[tasks.gkeplugin]
+run = "gcloud components install gke-gcloud-auth-plugin"
+
+[tasks.gkecredential]
+usage = """
+arg "<cluster>" help="cluster name"
+arg "<location>" help="location"
+"""
+run = "gcloud container clusters get-credentials ${usage_cluster} --location=${usage_location}"
+depends = ["gkeplugin"]

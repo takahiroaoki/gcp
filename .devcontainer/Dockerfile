@@ -4,6 +4,8 @@ RUN dnf install -y dnf-plugins-core \
     && dnf config-manager --add-repo https://mise.jdx.dev/rpm/mise.repo
 
 RUN dnf install -y --allowerasing \
+        tar \
+        gzip \
         git \
         mise \
     && rm -rf /var/cache/dnf/* \
