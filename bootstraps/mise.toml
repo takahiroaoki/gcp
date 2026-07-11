@@ -19,3 +19,29 @@ run = "terraform apply"
 
 [tasks.tfdestroy]
 run = "terraform destroy"
+
+###########
+### GKE ###
+###########
+[tasks.argocdcred]
+run = "mise run gkecredential argocd-dev-cluster asia-northeast1"
+
+[tasks.argocdnamespace]
+run = "kubectl create namespace argocd"
+
+[tasks.argocdapply]
+run = "kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml"
+
+[tasks.argocdexpose]
+run = "kubectl patch svc argocd-server -n argocd -p '{\"spec\": {\"type\": \"LoadBalancer\"}}'"
+
+[tasks.argocd]
+run = [
+	{ task = "argocdcred"},
+	{ task = "argocdnamespace"},
+	{ task = "argocdapply"},
+	{ task = "argocdexpose"},
+]
+
+[tasks.argocdpwd]
+run = "argocd admin initial-password -n argocd"
