@@ -4,6 +4,11 @@ This tf generate a cluster for argocd.
 
 ## setup
 
+1. Enable gcp services.
+	```
+	$ mise run enable
+	```
+
 1. Prepare clusters.
 	```
 	$ mise run tfinit

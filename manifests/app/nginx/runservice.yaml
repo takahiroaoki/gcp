@@ -6,7 +6,7 @@ metadata:
 spec:
   ingress: "INGRESS_TRAFFIC_ALL"
   launchStage: "GA"
-  location: "asia-northeast1-a"
+  location: "asia-northeast1"
   projectRef:
     external: "playground-502010"
   template:

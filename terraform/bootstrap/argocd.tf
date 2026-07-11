@@ -11,9 +11,20 @@ resource "google_service_account" "argocd" {
   display_name = "argocd-${local.env}"
 }
 
+# For config connector to manipulate GCP resources
 resource "google_project_iam_member" "project_editor" {
   project = local.project_id
   role    = "roles/editor"
+  member  = "serviceAccount:argocd-${local.env}@${local.project_id}.iam.gserviceaccount.com"
+  depends_on = [
+    google_service_account.argocd,
+  ]
+}
+
+# For config connector to manipulate Cloud Run's IAM
+resource "google_project_iam_member" "cloud_run_admin" {
+  project = local.project_id
+  role    = "roles/run.admin"
   member  = "serviceAccount:argocd-${local.env}@${local.project_id}.iam.gserviceaccount.com"
   depends_on = [
     google_service_account.argocd,
