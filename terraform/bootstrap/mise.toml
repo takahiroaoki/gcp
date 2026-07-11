@@ -1,0 +1,43 @@
+[tasks.enable]
+run = '''
+gcloud services enable container.googleapis.com run.googleapis.com
+'''
+
+#################
+### terraform ###
+#################
+
+[tasks.tfinit]
+run = "terraform init"
+
+[tasks.tffmt]
+run = "terraform fmt"
+
+[tasks.tfvalidate]
+run = "terraform validate"
+
+[tasks.tfplan]
+run = "terraform plan"
+
+[tasks.tfapply]
+run = "terraform apply"
+
+[tasks.tfdestroy]
+run = "terraform destroy"
+
+###########
+### GKE ###
+###########
+[tasks.argocd]
+run = '''
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+'''
+depends = ["gkecred"]
+
+[tasks.argocdready]
+run = '''
+kubectl patch svc argocd-server -n argocd -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"
+argocd admin initial-password -n argocd
+'''
+depends = ["gkecred"]

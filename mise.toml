@@ -23,5 +23,5 @@ run = "gcloud auth application-default login"
 run = "gcloud components install gke-gcloud-auth-plugin"
 
 [tasks.gkecred]
-run = "gcloud container clusters get-credentials playground-dev-cluster --location=asia-northeast1"
+run = "gcloud container clusters get-credentials argocd-dev-cluster --location=asia-northeast1"
 depends = ["gkeplugin"]

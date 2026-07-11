@@ -1,8 +1,13 @@
-# bootstraps
+# bootstrap
 
-This tf generate a cluster for argocd and applications.
+This tf generate a cluster for argocd.
 
 ## setup
+
+1. Enable gcp services.
+	```
+	$ mise run enable
+	```
 
 1. Prepare clusters.
 	```
@@ -11,7 +16,7 @@ This tf generate a cluster for argocd and applications.
 	$ mise run tfapply
 	```
 
-1. Setup argocd.
+1. Setup argocd and wait until the workloads become ready.
 	```
 	$ mise run argocd
 	```
@@ -20,7 +25,7 @@ This tf generate a cluster for argocd and applications.
 	
 	Get initial password for `admin` user. Then get access to the host of `argocd-server`.
 	```
-	$ mise run argocdpwd
+	$ mise run argocdready
 	```
 
 ## clean up

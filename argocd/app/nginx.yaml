@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: manifests/nginx
+    path: manifests/app/nginx
     repoURL: https://github.com/takahiroaoki/gcp-playground.git
     targetRevision: main
   syncPolicy:

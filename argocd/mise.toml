@@ -1,2 +1,12 @@
+[tasks."config-connector"]
+run = '''
+gcloud storage cp gs://configconnector-operator/latest/release-bundle.tar.gz release-bundle.tar.gz
+tar zxvf release-bundle.tar.gz
+kubectl apply -f operator-system/autopilot-configconnector-operator.yaml
+kubectl apply -f configconnector.yaml
+'''
+depends = ["gkecred"]
+
 [tasks.deploy]
-run = "kubectl apply -f root.yml"
+run = "kubectl apply -f root.yaml"
+depends = ["gkecred"]
