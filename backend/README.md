@@ -2,11 +2,29 @@
 
 This tf generates gcs for terraform's backend for tfstate files.
 
+## setup
+
 ```
-$ mise exec -- terraform init
-$ mise exec -- terraform fmt
-$ mise exec -- terraform validate
-$ mise exec -- terraform plan
-$ mise exec -- terraform apply
-$ mise exec -- terraform destroy
+$ mise run tfinit
+$ mise run tfplan
+$ mise run tfapply
+```
+
+## clean up
+
+```
+$ mise run tfdestroy
+```
+
+## appendix
+
+**terraform commands**
+
+```
+$ mise run tfinit
+$ mise run tffmt
+$ mise run tfvalidate
+$ mise run tfplan
+$ mise run tfapply
+$ mise run tfdestroy
 ```

@@ -1,0 +1,21 @@
+#################
+### terraform ###
+#################
+
+[tasks.tfinit]
+run = "terraform init"
+
+[tasks.tffmt]
+run = "terraform fmt"
+
+[tasks.tfvalidate]
+run = "terraform validate"
+
+[tasks.tfplan]
+run = "terraform plan"
+
+[tasks.tfapply]
+run = "terraform apply"
+
+[tasks.tfdestroy]
+run = "terraform destroy"

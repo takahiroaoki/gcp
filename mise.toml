@@ -1,3 +1,19 @@
 [tools]
 gcloud = "575.0.1"
+helm = "4.2.3"
+kubectl = "1.36.2"
+kubectx = "0.11.0"
 terraform = "1.15.8"
+
+##############
+### gcloud ###
+##############
+
+[tasks.init]
+run = "gcloud init"
+
+[tasks.auth]
+run = "gcloud auth login"
+
+[tasks.appauth]
+run = "gcloud auth application-default login"
