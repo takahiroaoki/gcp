@@ -8,3 +8,7 @@ Settings for argocd.
 	```
 	$ mise run deploy
 	```
+
+Then, we can manipulates applications on ArgoCD GUI.
+
+The manifest files of applications are in [manifests](../manifests/).
