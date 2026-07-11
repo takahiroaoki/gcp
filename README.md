@@ -4,6 +4,13 @@ GCP playground for myself.
 
 This repository mainly store code or scripts for terraform, k8s, etc.
 
+## requirements
+
+- Docker Desktop
+- VSCode & Dev Container Extension
+
+※Or, codespaces.
+
 ## setup
 
 1. Install tools.
@@ -25,7 +32,9 @@ This repository mainly store code or scripts for terraform, k8s, etc.
 
 1. Prepare a GCS bucket for tfstate files. See [backend](./backend/).
 
-1. Prepare a GKE for argocd and applications. See [bootstraps](./bootstraps/).
+1. Prepare a GKE cluster for argocd and applications. See [bootstraps](./bootstraps/).
+
+1. Initialize argocd for GitOps. See [argocd](./argocd/).
 
 ## clean up
 

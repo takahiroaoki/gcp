@@ -1,0 +1,2 @@
+[tasks.deploy]
+run = "kubectl apply -f root.yml"
