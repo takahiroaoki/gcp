@@ -1,4 +1,4 @@
-# bootstraps
+# bootstrap
 
 This tf generate a cluster for argocd and applications.
 
