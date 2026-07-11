@@ -4,6 +4,13 @@ GCP playground for myself.
 
 This repository mainly store code or scripts for terraform, k8s, etc.
 
+## requirements
+
+- Docker Desktop
+- VSCode & Dev Container Extension
+
+※Or, codespaces.
+
 ## setup
 
 1. Install tools.
