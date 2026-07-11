@@ -4,6 +4,11 @@ Settings for argocd.
 
 ## setup
 
+1. Install config connector.
+	```
+	$ mise run config-connector
+	```
+
 1. Deploy app-of-apps.
 	```
 	$ mise run deploy
