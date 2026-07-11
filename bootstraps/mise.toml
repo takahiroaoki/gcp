@@ -24,7 +24,7 @@ run = "terraform destroy"
 ### GKE ###
 ###########
 [tasks.argocdcred]
-run = "mise run gkecredential argocd-dev-cluster asia-northeast1"
+run = "mise run gkecredential playground-dev-cluster asia-northeast1"
 
 [tasks.argocdnamespace]
 run = "kubectl create namespace argocd"

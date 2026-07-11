@@ -1,6 +1,6 @@
 # bootstraps
 
-This tf generate clusters for argocd and applications.
+This tf generate a cluster for argocd and applications.
 
 ## setup
 
