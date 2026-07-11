@@ -1,4 +1,4 @@
-# gcp
+# gcp-playground
 
 ## setup
 
