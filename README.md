@@ -30,14 +30,14 @@ This repository mainly store code or scripts for terraform, k8s, etc.
     $ mise run appauth
     ```
 
-1. Prepare a GCS bucket for tfstate files. See [backend](./backend/).
+1. Prepare a GCS bucket for tfstate files. See [backend](./terraform/backend/).
 
-1. Prepare a GKE cluster for argocd and applications. See [bootstraps](./bootstraps/).
+1. Prepare a GKE cluster for argocd and applications. See [bootstraps](./terraform/bootstraps/).
 
 1. Initialize argocd for GitOps. See [argocd](./argocd/).
 
 ## clean up
 
-1. Destroy clusters for argocd and applications. See [bootstraps](./bootstraps/).
+1. Destroy clusters for argocd and applications. See [bootstraps](./terraform/bootstraps/).
 
-1. Finally, destroy the backend bucket. See [backend](./backend/).
+1. Finally, destroy the backend bucket. See [backend](./terraform/backend/).
