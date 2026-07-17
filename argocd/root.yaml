@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-root
-  namespace: argocd
+  namespace: bootstrap
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: bootstrap
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
@@ -22,7 +22,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: infra-root
-  namespace: argocd
+  namespace: bootstrap
 spec:
   project: default
   source:
@@ -31,7 +31,7 @@ spec:
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: bootstrap
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

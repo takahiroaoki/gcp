@@ -1,3 +1,17 @@
+[tasks.argocd]
+run = '''
+kubectl create namespace bootstrap
+kubectl apply -n bootstrap -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+'''
+depends = ["gkecred"]
+
+[tasks.argocdready]
+run = '''
+kubectl patch svc argocd-server -n bootstrap -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"
+argocd admin initial-password -n bootstrap
+'''
+depends = ["gkecred"]
+
 [tasks."config-connector"]
 run = '''
 gcloud storage cp gs://configconnector-operator/latest/release-bundle.tar.gz release-bundle.tar.gz
@@ -8,5 +22,8 @@ kubectl apply -f configconnector.yaml
 depends = ["gkecred"]
 
 [tasks.deploy]
-run = "kubectl apply -f root.yaml"
+run = '''
+kubectl apply -f argocd-role.yaml
+kubectl apply -f root.yaml
+'''
 depends = ["gkecred"]
