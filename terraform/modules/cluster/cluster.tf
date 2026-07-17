@@ -44,6 +44,6 @@ resource "google_container_cluster" "default" {
     services_secondary_range_name = google_compute_subnetwork.default.secondary_ip_range[0].range_name
     cluster_secondary_range_name  = google_compute_subnetwork.default.secondary_ip_range[1].range_name
   }
-
+  
   deletion_protection = false
 }

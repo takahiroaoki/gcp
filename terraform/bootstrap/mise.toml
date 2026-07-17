@@ -22,20 +22,3 @@ run = "terraform apply"
 
 [tasks.tfdestroy]
 run = "terraform destroy"
-
-###########
-### GKE ###
-###########
-[tasks.argocd]
-run = '''
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-'''
-depends = ["gkecred"]
-
-[tasks.argocdready]
-run = '''
-kubectl patch svc argocd-server -n argocd -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"
-argocd admin initial-password -n argocd
-'''
-depends = ["gkecred"]
