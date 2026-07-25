@@ -15,7 +15,7 @@ Settings for argocd.
 	
 	Get initial password and update it for `admin` user. Then get access to the host of `argocd-server`.
 	```
-	$ mise run argocdready
+	$ mise run argocdexpose
 	
 	# on another terminal
 	$ mise exec -- kubectl port-forward svc/argocd-server -n bootstrap 8080:443
@@ -26,12 +26,7 @@ Settings for argocd.
 	# then stop the port-forward
 	```
 
-1. Install config connector.
-	```
-	$ mise run config-connector
-	```
-
-1. Deploy app-of-apps.
+1. Install config connector and register app-of-apps.
 	```
 	$ mise run deploy
 	```
