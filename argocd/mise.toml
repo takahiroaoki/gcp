@@ -30,7 +30,7 @@ kubectl apply -f root.yaml
 depends = ["gkecred"]
 
 [tasks.deploy]
-run = [
-	"config-connector",
-	"argocdready"
+depends = [
+	'config-connector',
+	'argocdready'
 ]

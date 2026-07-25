@@ -23,10 +23,9 @@ Settings for argocd.
 	# on the original terminal
 	$ mise exec -- argocd login localhost:8080 --insecure
 	$ mise exec -- argocd account update-password
-	# then stop the port-forward
 	```
 
-1. Install config connector and register app-of-apps.
+1. Install config connector and register app-of-apps. Then stop the previous port-forwarding.
 	```
 	$ mise run deploy
 	```
