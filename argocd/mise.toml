@@ -23,6 +23,7 @@ depends = ["gkecred"]
 
 [tasks.deploy]
 run = '''
+argocd repo add https://github.com/takahiroaoki/gcp-playground.git --username oauth2 --password $(cat pat.txt)
 kubectl apply -f argocd-role.yaml
 kubectl apply -f root.yaml
 '''
