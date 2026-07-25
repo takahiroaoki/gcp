@@ -2,7 +2,7 @@ apiVersion: run.cnrm.cloud.google.com/v1beta1
 kind: RunService
 metadata:
   name: nginx
-  namespace: default
+  namespace: main
 spec:
   ingress: "INGRESS_TRAFFIC_ALL"
   launchStage: "GA"

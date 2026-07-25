@@ -11,5 +11,3 @@ spec:
     path: manifests/app/nginx
     repoURL: https://github.com/takahiroaoki/gcp-playground.git
     targetRevision: main
-  syncPolicy:
-    automated: {}
