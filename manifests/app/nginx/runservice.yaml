@@ -3,6 +3,8 @@ kind: RunService
 metadata:
   name: nginx
   namespace: main
+  annotations:
+    cnrm.cloud.google.com/deletion-policy: "delete"
 spec:
   ingress: "INGRESS_TRAFFIC_ALL"
   launchStage: "GA"

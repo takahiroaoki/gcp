@@ -5,7 +5,7 @@ kubectl apply -n bootstrap -f https://raw.githubusercontent.com/argoproj/argo-cd
 '''
 depends = ["gkecred"]
 
-[tasks.argocdready]
+[tasks.argocdexpose]
 run = '''
 kubectl patch svc argocd-server -n bootstrap -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"
 argocd admin initial-password -n bootstrap
@@ -21,10 +21,16 @@ kubectl apply -f configconnector.yaml
 '''
 depends = ["gkecred"]
 
-[tasks.deploy]
+[tasks.argocdready]
 run = '''
 argocd repo add https://github.com/takahiroaoki/gcp-playground.git --username oauth2 --password $(cat pat.txt)
 kubectl apply -f argocd-role.yaml
 kubectl apply -f root.yaml
 '''
 depends = ["gkecred"]
+
+[tasks.deploy]
+depends = [
+	'config-connector',
+	'argocdready'
+]
